@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 
 
-class Game(BaseModel): # Simply class for data
+class Game(BaseModel): # Simply class for game
     id: int = 0
     red: int = 0
     green: int = 0
