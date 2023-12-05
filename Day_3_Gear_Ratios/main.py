@@ -97,4 +97,17 @@ for i in table_with_numbers_to_add:
     Sum_of_value += i
 print(Sum_of_value)
 
-
+def check_sign_in_middle_line(number,index,one_line_index):
+    bool = False
+    if all_lines[one_line_index][index - 1] == '.' or all_lines[one_line_index][index + len(str(number))+1] == '.' or all_lines[one_line_index][index - 1].isdigit() or all_lines[one_line_index][index + len(str(number))+1].isdigit():
+        bool = False
+    else:
+        bool = True
+        return bool
+    for i in range(len(str(number))+2):
+        if all_lines[one_line_index-1][index -1 + i] == '.' or all_lines[one_line_index-1][index -1 + i].isdigit() or all_lines[one_line_index+1][index -1 + i] == '.' or all_lines[one_line_index+1][index -1 + i].isdigit():
+            bool = False
+        else:
+            bool = True
+            break
+    return bool
