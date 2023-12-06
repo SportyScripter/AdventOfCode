@@ -139,7 +139,7 @@ def find_index_of_number(temp_string,number,j):
         return i
       else:
         i+=1
-file_name = 'scheme.txt'
+
 with open('scheme.txt', 'r') as f: #Here you can change the name of the file
     all_lines = f.readlines()
 table_with_numbers_to_add = []
@@ -149,7 +149,6 @@ for one_line_index in range(len(all_lines)):
     numbers = re.findall(r'\d+', all_lines[one_line_index])
     j=0
     for number in numbers:
-        dot = ''
         index = find_index_of_number(all_lines[one_line_index],number,j)
         j = index
         #First line
@@ -175,6 +174,7 @@ for one_line_index in range(len(all_lines)):
               else:
                 table_with_numbers_to_substract.append(number)
 
+
         #Last line
         elif one_line_index == len(all_lines) - 1:
             #First index
@@ -197,6 +197,7 @@ for one_line_index in range(len(all_lines)):
                 table_with_numbers_to_add.append(number)
               else:
                 table_with_numbers_to_substract.append(number)
+
 
         #Middle line
         else:
@@ -228,6 +229,7 @@ for i in table_with_numbers_to_add:
 print(Sum_of_value)
 #answer = 556057
 #answser to part two = 82824352
+
 
 
 
